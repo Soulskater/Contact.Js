@@ -1,0 +1,23 @@
+{
+  "name": "ContractJs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Soulskater/ContractJs",
+  "authors": [
+    "Soulskater <gmeszaros007@gmail.com>"
+  ],
+  "description": "Data contracts for javascript",
+  "main": "contract.js",
+  "keywords": [
+    "datacontract",
+    "javascript",
+    "datavalidation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

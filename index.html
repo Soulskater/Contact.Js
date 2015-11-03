@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataContract for javascript</title>
+    <script src="src/scripts/errors.js"></script>
+    <script src="src/scripts/dataTypes.js"></script>
+    <script src="src/scripts/validator.js"></script>
+</head>
+<body>
+<script>
+    var contract = {
+        customField: DataContract.Types.string,
+        id: DataContract.Types.int,
+        nested: {
+            name: DataContract.Types.string,
+            id: DataContract.Types.int,
+            otherNested: {
+                id: DataContract.Types.int
+            }
+        },
+        mydata: DataContract.Types.bool
+    };
+    var data = {
+        id: 0,
+        nested: {
+            name: "myname",
+            id: 10.2,
+            otherNested: {
+                id: 5
+            }
+        },
+        mydata: false
+        //myProp: "test"
+    };
+    data["customField"] = "value1";
+    var contractErrors = DataContract.Validator.validateContract(contract);
+    console.log(contractErrors);
+    if (contractErrors.length === 0) {
+        var errors = DataContract.Validator.validateData(data, contract);
+        console.log(errors);
+    }
+</script>
+<h1>
+    DataContract for javascript
+</h1>
+</body>
+</html>
